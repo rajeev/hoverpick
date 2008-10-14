@@ -28,8 +28,8 @@ var HoverPick = new Class({
 	
 	buildElements: function() {
 		document.body.addEvent('click', function(e) {
-			if(this.panelVisible && e.target != this.el) {
-				if(e.target.getParent().hasClass('moo-pick-ul')) {
+			if(this.panelVisible && ( $(e.target) != this.el && $(e.target) != this.timePicker) ) {
+				if($(e.target).getParent().hasClass('moo-pick-ul')) {
 					this.hidePanel();
 				}
 				else {
